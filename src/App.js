@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SignUp from './Pages/signup';
 import Login from './Pages/login';
 import AddStudent from './Pages/addStudent';
+// import Student from './Pages/studentPage'
 
 
 function App() {
