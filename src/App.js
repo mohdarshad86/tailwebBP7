@@ -1,10 +1,13 @@
 // import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import ErrorPage from './Pages/errorPage'
 import SignUp from './Pages/signup';
 import Login from './Pages/login';
 import AddStudent from './Pages/addStudent';
 // import Student from './Pages/studentPage'
+import UpdateStudent from './Pages/updateStdudent';
 
 
 function App() {
@@ -21,8 +24,8 @@ function App() {
             <Route path='/' element={<Login />} />
             <Route path='signup' element={<SignUp />} />
             <Route path='addStudent' element={<AddStudent />} />
-
-
+            <Route path='updateStdudent/:id' element={<UpdateStudent />} />
+            <Route path='*' element={<ErrorPage />} />
 
           </Routes>
         </div>
