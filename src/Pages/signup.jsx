@@ -33,10 +33,10 @@ const SignUp = () => {
             localStorage.setItem("userId", JSON.stringify(result.data.userId))
             localStorage.setItem("token", JSON.stringify(result.data.token))
             console.log(result);
-            navigate('/login')
+            navigate('/')
         }
     }
-    
+
     return (
 
         <div className="signup">
@@ -50,7 +50,7 @@ const SignUp = () => {
                     <label>Title: </label>
                     <input
                         type='text'
-                        placeholder="Enter title"
+                        placeholder="Title: Mr, Mrs, Miss"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                     /><br />
@@ -82,9 +82,9 @@ const SignUp = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     /><br />
-                  
+
                     <button className="btn" type="submit" onClick={SignUp}>SignUp</button><br />
-                 
+
                     <p className="dont-have">
                         Already have an account ? <Link to="/">Login.</Link>
                     </p >

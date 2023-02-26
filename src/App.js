@@ -6,8 +6,8 @@ import ErrorPage from './Pages/errorPage'
 import SignUp from './Pages/signup';
 import Login from './Pages/login';
 import AddStudent from './Pages/addStudent';
-// import Student from './Pages/studentPage'
-import UpdateStudent from './Pages/updateStdudent';
+import Student from './Pages/studentPage'
+import Header from './components/header';
 
 
 function App() {
@@ -16,15 +16,21 @@ function App() {
     <div className="App">
 
       <BrowserRouter>
-        <div className='logo'><h2>Student Management</h2></div>
+        <Header />
         <div className='route'>
           <Routes>
             {/* <Route path='/' element={<Home />} /> */}
 
             <Route path='/' element={<Login />} />
             <Route path='signup' element={<SignUp />} />
-            <Route path='addStudent' element={<AddStudent />} />
-            <Route path='updateStdudent/:id' element={<UpdateStudent />} />
+            <Route path='addStudent' element={
+              localStorage.getItem("token") ?
+                <AddStudent /> : <Login />
+            } />
+            <Route path='getStudent' element={
+              localStorage.getItem("token") ?
+                <Student /> : <Login />
+            } />
             <Route path='*' element={<ErrorPage />} />
 
           </Routes>
